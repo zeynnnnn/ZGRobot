@@ -1,0 +1,74 @@
+fun multiplyCheck (int a,int b)
+start
+	int counter =0!
+	logic equality= false!
+	int result = a*b!
+	iter(x=0!x<b!x=x+@1)
+		start
+			counter=counter+@a !
+		done!
+
+	inCase(result==counter)
+		start
+			equality= true!
+		done
+	return equality!
+done!
+const int x = 5!
+logic working = multiplyCheck(3,5)!
+inCase(working=/=true)
+		say("Not Working")!
+notTheCase
+		say("Working")!
+
+
+//gets a name form the Sensor
+string name!
+name= readData(ID6789)!
+
+//when name isn't empty but "z" says interesting and if it is something else send Data
+inCase(name =/= "")
+	start 
+		inCase(name=="z")
+			say("Interesting")!
+		notTheCase
+			sendData()!
+	done
+
+fun multiplyBy10( int num )
+start
+	num = num * 10!
+	return num!
+done!
+
+int given= input()!
+
+//homework is Fun 
+int data = readData( ID23412 )!
+int i!
+say("Last Project Yeah!")!
+int data2 = receiveData()!
+iter ( i = 0 ! i <= data2 ! i = i * 2 )
+	start
+		turn("left")!
+	done! 
+int data3 = multiplyBy10( data2 )! // call function
+inCase( data3 > 0 && data3 < 50 )
+	release()!
+notTheCase
+	turn("right")!
+sendData()!
+main()
+start
+	iter ( i = 0 ! i < data ! i = i +@ 1 )
+	start
+			int b = 10!
+			int c = 5!
+			int d = b * 4 +@ c * 2 -@ 9 ! 	
+			while ( d >= 0 )
+			start
+				move()!
+				d = d / 9!
+			done!
+	done!
+done!
